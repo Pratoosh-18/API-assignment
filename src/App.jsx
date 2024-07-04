@@ -57,7 +57,7 @@ function App() {
             <div className="flex h-full w-full md:w-[60%] justify-center items-center ">
               {/* <div className="UserCard w-[80%] flex justify-center items-center"> */}
               {user ? (
-                <div className="UserCard w-[300px] md:w-[400px] h-[300px] md:h-[450px] flex flex-col justify-center  border-2 border-black">
+                <div className="UserCard w-[300px] md:w-[400px] h-[300px] md:h-[500px] flex flex-col justify-center  border-2 border-black">
                   {/* <h2>User Details</h2> */}
                   <div className="flex w-full h-[225px] justify-center items-center">
                     <img
@@ -67,25 +67,25 @@ function App() {
                     />
                   </div>
                   <div className="h-[225px] flex flex-col justify-center px-5">
-                    <p className="flex gap-1">
-                      <p>First name:</p>
+                    <p>
+                      <span className="text-lg font-medium">First name : </span>
                       {user.profile.firstName}
                     </p>
-                    <p className="flex gap-1">
-                      <p>Last name:</p>
+                    <p>
+                      <span className="text-lg font-medium">Last name : </span>
                       {user.profile.lastName}
                     </p>
-                    <p className="flex gap-1">
-                      <p>Bio:</p>
+                    <p>
+                      <span className="text-lg font-medium">Job title : </span>
+                       {user.jobTitle}
+                    </p>
+                    <p>
+                      <span className="text-lg font-medium">Bio : </span>
                       {user.Bio}
                     </p>
-                    <p className="flex gap-1">
-                      <p>Job title:</p>
-                      {user.jobTitle}
-                    </p>
-                    <p className="flex gap-1">
-                      <p>Email:</p>
-                      {user.profile.email}
+                    <p>
+                      <span className="text-lg font-medium">Email : </span>
+                      {user.profile.email.toLowerCase()}
                     </p>
                   </div>
                 </div>
