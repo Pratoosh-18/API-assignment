@@ -36,7 +36,7 @@ function App() {
                   <div key={index}>
                     <div
                       onClick={() => handleUsernameClick(item)}
-                      className={`cursor-pointer p-3 m-1 ${
+                      className={`cursor-pointer p-3 m-2 rounded-md ${
                         user && user.id === item.id
                           ? "bg-yellow-300"
                           : "bg-transparent"
@@ -44,11 +44,11 @@ function App() {
                     >
                       <div className="flex items-center gap-2">
                         <img
-                          className="h-[40px] w-[40px]"
+                          className="rounded-full overflow-hidden h-[40px] w-[40px]"
                           src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg"
                           alt=""
                         />
-                        {item.profile.username}
+                        {item.profile.firstName} {item.profile.lastName}
                       </div>
                     </div>
                   </div>
@@ -57,34 +57,38 @@ function App() {
             <div className="flex h-full w-full md:w-[60%] justify-center items-center ">
               {/* <div className="UserCard w-[80%] flex justify-center items-center"> */}
               {user ? (
-                <div className="UserCard w-[300px] md:w-[400px] h-[300px] md:h-[500px] flex flex-col justify-center  border-2 border-black">
+                <div className="UserCard rounded-lg my-3 w-[350px] md:w-[400px] h-[350px] md:h-[500px] flex flex-col justify-center  border-2 border-black">
                   {/* <h2>User Details</h2> */}
-                  <div className="flex w-full h-[225px] justify-center items-center">
+                  <div className="flex w-full h-[170px] justify-center items-center">
                     <img
                       className="h-[100px] w-[100px] md:h-[200px] md:w-[200px]"
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV1Mly7C6D_WWpPXTAO4dF52D9Wd9FKuC9zw&s"
                       alt=""
                     />
                   </div>
-                  <div className="h-[225px] flex flex-col justify-center px-5">
+                  <div className="h-[225px] flex flex-col justify-center text-sm md:text-base px-5">
                     <p>
-                      <span className="text-lg font-medium">First name : </span>
+                      <span className="text-base md:text-lg font-medium">First name : </span>
                       {user.profile.firstName}
                     </p>
                     <p>
-                      <span className="text-lg font-medium">Last name : </span>
+                      <span className="text-base md:text-lg font-medium">Last name : </span>
                       {user.profile.lastName}
                     </p>
                     <p>
-                      <span className="text-lg font-medium">Job title : </span>
+                      <span className="text-base md:text-lg font-medium">User name : </span>
+                      {user.profile.username}
+                    </p>
+                    <p>
+                      <span className="text-base md:text-lg font-medium">Job title : </span>
                        {user.jobTitle}
                     </p>
                     <p>
-                      <span className="text-lg font-medium">Bio : </span>
+                      <span className="text-base md:text-lg font-medium">Bio : </span>
                       {user.Bio}
                     </p>
                     <p>
-                      <span className="text-lg font-medium">Email : </span>
+                      <span className="text-base md:text-lg font-medium">Email : </span>
                       {user.profile.email.toLowerCase()}
                     </p>
                   </div>
